@@ -1,6 +1,6 @@
-# ASAJ Full UI Campaign Website
+# ASAJ Campaign Website
 
-This is the styled UI version with colors, sections, manifesto, gallery, testimonials, FAQ, and volunteer form.
+Version 2.0: colors, sections, manifesto, gallery, testimonials, FAQ, and volunteer form.
 
 ## Images to place inside public/
 - apc-logo.png

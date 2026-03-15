@@ -1,12 +1,12 @@
 
 "use client";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
-export default function ASAJCampaignWebsite() {
+export default function Home(){
 
 const formspreeEndpoint = "https://formspree.io/f/xkoqvode";
 
-const [formData, setFormData] = useState({
+const [form,setForm]=useState({
 name:"",
 phone:"",
 ward:"",
@@ -14,11 +14,7 @@ role:"",
 message:""
 });
 
-const volunteerSummary = useMemo(() => {
-return `Volunteer Interest%0AName: ${encodeURIComponent(formData.name)}%0APhone: ${encodeURIComponent(formData.phone)}%0AWard/LGA: ${encodeURIComponent(formData.ward)}%0ARole: ${encodeURIComponent(formData.role)}%0AMessage: ${encodeURIComponent(formData.message)}`;
-}, [formData]);
-
-async function handleSubmit(e){
+async function submit(e){
 e.preventDefault();
 
 await fetch(formspreeEndpoint,{
@@ -27,39 +23,74 @@ headers:{
 "Content-Type":"application/json",
 Accept:"application/json"
 },
-body:JSON.stringify(formData)
+body:JSON.stringify(form)
 });
-alert("Submitted successfully");
+
+alert("Volunteer form submitted successfully");
 }
 
 return(
-<div style={{padding:"40px",fontFamily:"Arial"}}>
+<div style={{fontFamily:"Arial",padding:"40px",maxWidth:"900px",margin:"auto"}}>
 
-<h1>ASAJ Campaign Volunteer Form</h1>
+<h1>ASAJ 2027 Campaign</h1>
 
-<form onSubmit={handleSubmit} style={{maxWidth:"400px",display:"grid",gap:"10px"}}>
+<p>
+Official volunteer registration platform for Hon. Abdulkareem Sabo Abdullahi (ASAJ)
+House of Representatives – Yola North, Yola South & Girei.
+</p>
 
-<input name="name" placeholder="Full name" onChange={e=>setFormData({...formData,name:e.target.value})}/>
+<hr/>
 
-<input name="phone" placeholder="Phone number" onChange={e=>setFormData({...formData,phone:e.target.value})}/>
+<h2>Campaign Vision</h2>
 
-<input name="ward" placeholder="Ward / LGA" onChange={e=>setFormData({...formData,ward:e.target.value})}/>
+<ul>
+<li>Youth empowerment</li>
+<li>Education and skills development</li>
+<li>Women inclusion</li>
+<li>Infrastructure development</li>
+<li>Technology driven governance</li>
+</ul>
 
-<select onChange={e=>setFormData({...formData,role:e.target.value})}>
+<hr/>
+
+<h2>Volunteer Registration</h2>
+
+<form onSubmit={submit} style={{display:"grid",gap:"10px",maxWidth:"400px"}}>
+
+<input placeholder="Full Name" onChange={e=>setForm({...form,name:e.target.value})}/>
+
+<input placeholder="Phone Number" onChange={e=>setForm({...form,phone:e.target.value})}/>
+
+<input placeholder="Ward / LGA" onChange={e=>setForm({...form,ward:e.target.value})}/>
+
+<select onChange={e=>setForm({...form,role:e.target.value})}>
+<option value="">Select Role</option>
 <option>Mobilizer</option>
-<option>Ward Team</option>
 <option>Youth Team</option>
+<option>Ward Team</option>
 <option>Women Team</option>
+<option>Media Volunteer</option>
 </select>
 
-<textarea placeholder="Message" onChange={e=>setFormData({...formData,message:e.target.value})}/>
+<textarea placeholder="Message (optional)" onChange={e=>setForm({...form,message:e.target.value})}/>
 
-<button type="submit">Submit</button>
+<button type="submit">Submit Form</button>
 
 </form>
 
-<a href={`https://wa.me/2347039861004?text=${volunteerSummary}`}>Send via WhatsApp</a>
+<br/>
+
+<a href="https://formspree.io/f/xkoqvode">
+Open Formspree Direct Form
+</a>
+
+<hr/>
+
+<h3>Campaign Contact</h3>
+
+<p>Email: asajjimeta05@gmail.com</p>
+<p>Phone: 07039861004</p>
 
 </div>
-);
+)
 }

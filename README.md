@@ -1,10 +1,15 @@
 
-ASAJ Campaign Website
+ASAJ Full Campaign Website
 
-Formspree endpoint already configured:
+Volunteer form connected to Formspree:
 
 https://formspree.io/f/xkoqvode
 
-Run:
+Run locally:
+
 npm install
 npm run dev
+
+Then open:
+
+http://localhost:3000

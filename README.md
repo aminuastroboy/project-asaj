@@ -1,17 +1,10 @@
-# ASAJ Campaign Website
 
-## Before running
-Place your images inside `public/` with these exact names:
-- `apc-logo.png`
-- `asaj-hero.jpg`
-- `asaj-profile.jpg`
+ASAJ Campaign Website
 
-## Run locally
-```bash
+Formspree endpoint already configured:
+
+https://formspree.io/f/xkoqvode
+
+Run:
 npm install
 npm run dev
-```
-
-## Volunteer form
-This project is connected to Formspree:
-https://formspree.io/f/xvzwovqz

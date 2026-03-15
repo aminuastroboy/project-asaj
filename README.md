@@ -1,15 +1,16 @@
+# ASAJ Full UI Campaign Website
 
-ASAJ Full Campaign Website
+This is the styled UI version with colors, sections, manifesto, gallery, testimonials, FAQ, and volunteer form.
 
-Volunteer form connected to Formspree:
+## Images to place inside public/
+- apc-logo.png
+- asaj-hero.jpg
+- asaj-profile.jpg
 
-https://formspree.io/f/xkoqvode
-
-Run locally:
-
+## Run locally
 npm install
 npm run dev
 
-Then open:
-
-http://localhost:3000
+## Formspree endpoint
+Current endpoint in app/page.jsx:
+https://formspree.io/f/xkoqvode

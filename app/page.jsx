@@ -57,7 +57,7 @@ export default function ASAJCampaignWebsite() {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
-  const formspreeEndpoint = "https://formspree.io/f/xvzwovqz";
+  const formspreeEndpoint = "https://formspree.io/f/xkoqvode";
 
   const volunteerSummary = useMemo(() => {
     return `Volunteer Interest%0AName: ${encodeURIComponent(formData.name)}%0APhone: ${encodeURIComponent(
